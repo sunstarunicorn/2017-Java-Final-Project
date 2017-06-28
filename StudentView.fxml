@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="520.0" prefWidth="775.0" stylesheets="@StudentCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StudentController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="menuNewFile" mnemonicParsing="false" onAction="#newFile" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="menuOpenFile" mnemonicParsing="false" onAction="#openFile" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="menuSaveFile" mnemonicParsing="false" onAction="#saveFile" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="menuSaveAsFile" mnemonicParsing="false" onAction="#saveAsFile" text="Save As   ">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuCloseProgram" mnemonicParsing="false" onAction="#closeProgram" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+            </Menu>
+            <Menu fx:id="studentMenu" mnemonicParsing="false" text="Students">
+               <items>
+                  <MenuItem fx:id="menuAddStudent" mnemonicParsing="false" onAction="#addStudent" text="Add Student">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuChangeStudent" disable="true" mnemonicParsing="false" onAction="#changeStudent" text="Change Student   ">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuDeleteStudent" disable="true" mnemonicParsing="false" onAction="#deleteStudent" text="Delete Student">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+            </Menu>
+            <Menu fx:id="scoreMenu" mnemonicParsing="false" text="Scores">
+               <items>
+                  <MenuItem fx:id="menuAddScore" disable="true" mnemonicParsing="false" onAction="#addScore" text="Add Score">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuChangeScore" disable="true" mnemonicParsing="false" onAction="#changeScore" text="Change Score   ">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuDeleteScore" disable="true" mnemonicParsing="false" onAction="#deleteScore" text="Delete Score">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="775.0" styleClass="background" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="85.0" layoutY="63.0" styleClass="label-italic-bold" text="Students">
+               <font>
+                  <Font name="Arial" size="48.0" />
+               </font>
+            </Label>
+            <ListView fx:id="studentList" disable="true" layoutX="85.0" layoutY="131.0" onMouseClicked="#loadStudentData" prefHeight="265.0" prefWidth="240.0" />
+            <Label fx:id="studName" disable="true" layoutX="450.0" layoutY="98.0" text="Name">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="showStudentName" disable="true" editable="false" layoutX="509.0" layoutY="95.0" prefHeight="26.0" prefWidth="200.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="showStudentScores" disable="true" layoutX="499.0" layoutY="135.0" onMouseClicked="#handleScore" prefHeight="265.0" prefWidth="210.0">
+               <columns>
+                  <TableColumn fx:id="testNumber" editable="false" prefWidth="105.0" text="Test Number" />
+                  <TableColumn fx:id="testScore" editable="false" prefWidth="105.0" text="Scores" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,35 @@
+.menu-bar
+{
+	-fx-background-color: lightskyblue;
+}
+
+.menu-button > .label
+{
+	-fx-font-size: 11pt;
+}
+
+.menu-item
+{
+	-fx-background-color: lightskyblue;
+}
+
+.menu-item > .label
+{
+	-fx-font-size: 11pt;
+}
+
+.background
+ {
+    -fx-background-color: lightblue;
+}
+
+.label
+{
+	-fx-font-family: "Book Antiqua";
+}
+
+.label-italic-bold
+{
+	-fx-font-style: italic;
+	-fx-font-weight: bold;
+}
